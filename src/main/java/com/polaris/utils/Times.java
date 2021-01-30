@@ -1,4 +1,4 @@
-package com.mj.tools;
+package com.polaris.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

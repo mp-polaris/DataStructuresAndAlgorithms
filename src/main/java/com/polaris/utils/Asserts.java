@@ -1,4 +1,4 @@
-package com.mj.tools;
+package com.polaris.utils;
 
 public class Asserts {
 	public static void test(boolean value) {
