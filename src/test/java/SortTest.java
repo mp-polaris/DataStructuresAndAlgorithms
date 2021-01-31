@@ -1,7 +1,4 @@
-import com.polaris.algorithms.sorting.BubbleSort;
-import com.polaris.algorithms.sorting.HeapSort;
-import com.polaris.algorithms.sorting.SelectionSort;
-import com.polaris.algorithms.sorting.Sort;
+import com.polaris.algorithms.sorting.*;
 import com.polaris.utils.Asserts;
 import com.polaris.utils.Integers;
 
@@ -18,7 +15,8 @@ public class SortTest {
         testSort(arr1,
                 new SelectionSort(),
                 new HeapSort(),
-                new BubbleSort());
+                new BubbleSort(),
+                new InsertionSort());
 
     }
 
