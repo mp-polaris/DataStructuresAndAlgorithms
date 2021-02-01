@@ -1,5 +1,8 @@
 package com.polaris.algorithms.sorting;
 
+import com.polaris.utils.Integers;
+import org.junit.Test;
+
 /**
  * @Author polaris
  * @Date 2021/1/31 0:49
@@ -110,4 +113,47 @@ public class InsertionSort<T extends Comparable<T>> extends Sort<T> {
         return begin;
     }
      */
+
+
+    /** TODO:手写1-交换 */
+    public static void InsertionSort(Integer[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int cur = i;
+            while(cur > 0 && arr[cur] < arr[cur - 1]) {
+                swap(arr,cur,cur - 1);
+                cur--;
+            }
+        }
+    }
+
+    private static void swap(Integer[] arr,int index1,int index2) {
+        Integer temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+
+    /** TODO:手写2-挪动优化 */
+    public static void InsertionSort2(Integer[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int cur = i;
+            Integer tempVal = arr[cur];
+            while(cur > 0 && tempVal < arr[cur - 1]) {
+                arr[cur] = arr[cur - 1];
+                cur--;
+            }
+            arr[cur] = tempVal;
+        }
+    }
+
+    /** TODO:手写3-二分搜索优化 */
+    public static void InsertionSort3(Integer[] arr) {
+
+    }
+
+    @Test
+    public void test() {
+        Integer[] arr = Integers.random(10, 1, 20);
+        InsertionSort2(arr);
+        Integers.println(arr);
+    }
 }

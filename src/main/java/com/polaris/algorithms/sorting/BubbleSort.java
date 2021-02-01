@@ -1,5 +1,8 @@
 package com.polaris.algorithms.sorting;
 
+import com.polaris.utils.Integers;
+import org.junit.Test;
+
 public class BubbleSort<T extends Comparable<T>> extends Sort<T> {
 
     /** 初步实现
@@ -50,5 +53,31 @@ public class BubbleSort<T extends Comparable<T>> extends Sort<T> {
             }
             eIndex = sortedIndex;
         }
+    }
+
+    /** TODO:快速手写 */
+    public static void BubbleSort(Integer[] arr) {
+        for (int eIndex = arr.length - 1; eIndex > 0 ; eIndex--) {
+            int flagIndex = 0;
+            for (int i = 1; i <= eIndex; i++) {
+                if(arr[i] < arr[i - 1]) {
+                    swap(arr,i, i - 1);
+                    flagIndex = i;
+                }
+            }
+            eIndex = flagIndex;
+        }
+    }
+    private static void swap(Integer[] arr,int index1,int index2) {
+        Integer temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+
+    @Test
+    public void test() {
+        Integer[] arr = Integers.random(5, 1, 10);
+        BubbleSort(arr);
+        Integers.println(arr);
     }
 }

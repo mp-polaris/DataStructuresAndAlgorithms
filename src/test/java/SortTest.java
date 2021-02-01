@@ -16,7 +16,8 @@ public class SortTest {
                 new SelectionSort(),
                 new HeapSort(),
                 new BubbleSort(),
-                new InsertionSort());
+                new InsertionSort(),
+                new MergeSort());
 
     }
 
